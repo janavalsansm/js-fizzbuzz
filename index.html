@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+       <div class="container">
+            <form action="" id="myform" style="margin-top: 40px;">
+                <h2 style="margin-bottom: 30px;">FIZZBUZZ</h2>
+                <label for="">Enter the limit :</label>
+                <input type="number" id="num"><br>
+                <button type="button" id="button" onclick="fizzbuzz()">Check</button>
+            </form>
+            <!-- <p > <span id="output"></span></p> -->
+            <p>
+                <ul id="mylist"></ul>
+            </p>
+            
+       </div>
+       <script>
+        function fizzbuzz() {
+          let num = document.getElementById("num").value;
+          let myList = document.getElementById("mylist");
+          myList.innerHTML = "";
+    
+          for (let i = 1; i <= num; i++) {
+            let result; 
+    
+            if (i % 3 === 0 && i % 5 === 0) {
+              result = "FizzBuzz";
+            } else if (i % 3 === 0) {
+              result = "Fizz";
+            } else if (i % 5 === 0) {
+              result = "Buzz";
+            } else {
+              result = i + "";
+            }
+    
+            
+            const listItem = document.createElement("li");
+            listItem.textContent = result;
+            myList.appendChild(listItem);
+          }
+        }
+      </script>
+    
+    <!-- <script>
+        function fizzbuzz(){
+            let num = document.getElementById("num").value
+            var result = ""
+            for(i = 1;i <=num; i++){
+                if(i%3 === 0 && i%5 === 0){
+                    result +="fizzbuzz";
+                }
+                else if(i%3 === 0){
+                    result += "Fizz";
+                }
+                else if(i%5 === 0){
+                    result += "Buzz";
+                }
+                else{
+                    result += i +"";
+                    
+                }
+            }
+            document.getElementById("mylist").innerHTML = result;
+        }
+    </script> -->
+    
+</body>
+</html>
